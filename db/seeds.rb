@@ -7,7 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Ingredient.destroy_all
+Cocktail.destroy_all
+Dose.destroy_all
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+lemon = Ingredient.create!(name: "lemon")
+ice = Ingredient.create!(name: "ice")
+mint_leaves = Ingredient.create!(name: "mint leaves")
+
+mojito = Cocktail.create!(name: "mojito")
+coca = Cocktail.create!(name: "coca")
+limonade = Cocktail.create!(name: "limonade")
+
+Dose.create!(description: "gdekf", ingredient: lemon, cocktail: coca)
+Dose.create!(description: "gdekf", ingredient: ice, cocktail: mojito)
+Dose.create!(description: "gdekf", ingredient: mint_leaves, cocktail: limonade)
