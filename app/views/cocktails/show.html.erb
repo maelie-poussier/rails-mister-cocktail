@@ -1,14 +1,19 @@
+<div class="banner"id="show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+  <ul class="list-unstyled">
+    <h2>Ingredient : </h2>
+    <% @cocktail.doses.each do |dose| %>
+    <li>
+      <%= dose.ingredient.name %> <%= ":" %>
+      <%= dose.description  %>
+      | <%= link_to "Delete", dose_path(dose),  method: :delete , data: { confirm: "Are you sure?" }, class: "btn delete" %>
+    </li>
+    <% end %>
+    <li> <%= link_to "Create dose", new_cocktail_dose_path(@cocktail), class: "create" %></li>
+  </ul>
 
-<h1><%= @cocktail.name %></h1>
+</div>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= link_to "Delete", dose_path(dose),  method: :delete , class: "btn btn-danger btn-xs" %>
-  </li>
-  <% end %>
-</ul>
 
-<%= link_to "Create dose", new_cocktail_dose_path(@cocktail) %>

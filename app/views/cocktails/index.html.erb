@@ -1,8 +1,16 @@
-<% @cocktails.each do |cocktail| %>
-  <h2> <%= cocktail.name  %> </h2>
-  <%= link_to "more detail", cocktail_path(cocktail)%>
-<% end %>
 
-<div>
-  <%= link_to "Create Cocktail", new_cocktail_path %>
+
+<div class="container mt-3">
+  <div class=" text-center col-12 mb-3" style = "color: #89c9b8"><h1 >Delicious cocktails</h1></div>
+  <div class="cards">
+
+    <% @cocktails.each do |cocktail| %>
+     <div class="card-category border border-dark" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+        <h2 style="color: white"> <%= cocktail.name  %> </h2>
+        <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
+      </div>
+    <% end %>
+    <br>
+  </div>
+  <div class="create"><%= link_to "Create Cocktail", new_cocktail_path, class: "btn btn-dark" %></div>
 </div>

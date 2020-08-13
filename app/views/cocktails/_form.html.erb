@@ -1,5 +1,8 @@
 <%= simple_form_for(cocktail) do |f| %>
-  <%= f.input :name %>
+  <div>
+    <h5>what is the name?</h5>
+    <%= f.input :name, label: false %>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit "Add cocktail", class: "btn btn-dark" %>
 <% end %>
