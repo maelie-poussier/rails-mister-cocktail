@@ -14,9 +14,9 @@ lemon = Ingredient.create!(name: "lemon")
 ice = Ingredient.create!(name: "ice")
 mint_leaves = Ingredient.create!(name: "mint leaves")
 
-mojito = Cocktail.create!(name: "mojito")
-coca = Cocktail.create!(name: "coca")
-limonade = Cocktail.create!(name: "limonade")
+mojito = Cocktail.create!(name: "mojito", photo: "https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg")
+coca = Cocktail.create!(name: "coca", photo: "https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg")
+limonade = Cocktail.create!(name: "limonade", photo: "https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg")
 
 Dose.create!(description: "gdekf", ingredient: lemon, cocktail: coca)
 Dose.create!(description: "gdekf", ingredient: ice, cocktail: mojito)

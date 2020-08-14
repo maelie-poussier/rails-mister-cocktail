@@ -3,6 +3,7 @@
     <h5>what is the name?</h5>
     <%= f.input :name, label: false %>
   </div>
+  <%= f.input :photo, as: :file %>
 
   <%= f.submit "Add cocktail", class: "btn btn-dark" %>
 <% end %>
