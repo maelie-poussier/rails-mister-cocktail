@@ -1,4 +1,11 @@
-<div class="banner"id="show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+<% if @cocktail.photo.attached? %>
+  <% picture_url = cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <%= picture_url = "https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg" %>
+<% end %>
+
+
+<div class="banner"id="show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= picture_url%>')">
   <div class="container">
     <div class="text-center m-5">
       <h1 style = "color: #89c9b8"><%= @cocktail.name %></h1>

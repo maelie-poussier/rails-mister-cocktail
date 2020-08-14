@@ -1,12 +1,17 @@
 
 
+
 <div class="container mt-3">
   <div class=" text-center col-12 mb-3" style = "color: #89c9b8"><h1 >Delicious cocktails</h1></div>
   <div class="cards">
-    <%= cl_image_tag("le4t707ifx5mqhmozqwp", width: 400, height: 300, crop: :fill) %>
 
     <% @cocktails.each do |cocktail| %>
-     <div class="card-category border border-dark" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg)">
+      <% if cocktail.photo.attached? %>
+        <% picture_url = cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <% picture_url = "https://res.cloudinary.com/bogdanm/image/upload/v1579273136/empty.jpg" %>
+      <% end %>
+     <div class="card-category border border-dark" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<%= picture_url%>')">
 
         <h2 style="color: white"> <%= cocktail.name  %> </h2>
         <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
